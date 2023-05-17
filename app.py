@@ -13,7 +13,6 @@ def index():
 @app.route('/generate', methods=['POST'])
 def generate():
     keywords = request.form['keywords'].split(',')
-    print(keywords)
     image = dell_model.generate_image(keywords)
     image.save('static/generated_image.jpg')
     return render_template('result.html')
