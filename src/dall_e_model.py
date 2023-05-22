@@ -2,17 +2,19 @@ import requests
 from PIL import Image
 import openai
 
-class DellEModel:
+class DallEModel:
     def __init__(self, api_key):
         openai.api_key = api_key
 
     def generate_image(self, keywords):
         prompt = 'Generate an image for representing the following keywords togather: ' + ', '.join(keywords)
-
+        prompt = "Generate a thumbnail for the instagram reel talking about \
+        startup ideas, goto market, business plan, data driven marketing, context"
         response = openai.Image.create(
             prompt=prompt,
             n=1,
             size="1024x1024"
+            # size="16:9"
         )
         image_url = response['data'][0]['url']
 
