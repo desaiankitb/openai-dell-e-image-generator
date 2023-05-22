@@ -1,10 +1,10 @@
 import os
 
 from flask import Flask, render_template, request
-from src.dell_model import DellEModel
+from src.dall_e_model import DallEModel
 
 app = Flask(__name__)
-dell_model = DellEModel(os.getenv("OPENAI_API_KEY"))
+dell_model = DallEModel(os.getenv("OPENAI_API_KEY"))
 
 @app.route('/')
 def index():

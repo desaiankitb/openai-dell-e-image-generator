@@ -8,8 +8,7 @@ class DallEModel:
 
     def generate_image(self, keywords):
         prompt = 'Generate an image for representing the following keywords togather: ' + ', '.join(keywords)
-        prompt = "Generate a thumbnail for the instagram reel talking about \
-        startup ideas, goto market, business plan, data driven marketing, context"
+        # prompt = "Generate a thumbnail for the instagram reel talking about chatGPT and DALL-E-2"
         response = openai.Image.create(
             prompt=prompt,
             n=1,
